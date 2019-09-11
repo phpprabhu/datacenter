@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+    <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/nfc_icon"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:lottie_rawRes="@raw/nfc"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
+            android:background="@color/transparent">
+    </com.airbnb.lottie.LottieAnimationView>
+
+
+    <TextView
+            android:textSize="12dp"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Enable NFC in settings and place your card on mobile"
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+</LinearLayout>

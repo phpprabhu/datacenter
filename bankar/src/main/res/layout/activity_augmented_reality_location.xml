@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:id="@+id/container"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<com.google.ar.sceneform.ArSceneView
+        android:id="@+id/arSceneView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"/>
+
+<LinearLayout
+        android:background="#4D000000"
+        android:id="@+id/camera_lv_expose"
+        android:layout_width="32dp"
+        android:layout_height="200dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:orientation="vertical">
+
+    <TextView
+            android:textStyle="bold"
+            android:text="3km"
+            android:id="@+id/distance"
+            android:layout_width="32dp"
+            android:layout_height="20dp"
+            android:textColor="#028855"
+            android:textSize="8dp"
+            android:gravity="center"/>
+
+    <FrameLayout
+            android:layout_width="32dp"
+            android:layout_height="180dp"
+            android:orientation="vertical">
+
+        <SeekBar
+                android:progress="1000"
+                android:min="1000"
+                android:max="5000"
+                android:id="@+id/seekbar"
+                android:layout_width="180dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:rotation="270"/>
+
+    </FrameLayout>
+
+</LinearLayout>
+
+<LinearLayout
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="#4D000000"
+        android:orientation="horizontal"
+        android:layout_marginStart="15dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/camera_tv_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp">
+
+    <CheckBox
+            android:textColor="#028855"
+            android:id="@+id/chkBank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bank" />
+
+    <CheckBox
+            android:textColor="#028855"
+            android:id="@+id/chkAtm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ATM"
+            android:checked="true" />
+</LinearLayout>
+
+
+
+    <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/container_left"
+            android:background="@drawable/rounded_bg"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="20dp">
+        <LinearLayout android:orientation="vertical"
+                      android:padding="20dp"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent">
+            <TextView
+                    android:padding="10dp"
+                    android:id="@+id/close_bank"
+                    android:layout_gravity="end"
+                    android:textSize="14dp"
+                    android:textColor="#fff"
+                    android:text="X"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:id="@+id/name"
+                    android:textStyle="bold"
+              android:textSize="12dp"
+              android:textColor="#fff"
+              android:text="Rue Neuve"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"/>
+            <TextView
+                    android:id="@+id/address1"
+                android:textSize="10dp"
+                android:textColor="#fff"
+                android:text="Rue Neuve 136"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                    android:id="@+id/address2"
+                    android:textSize="10dp"
+                    android:textColor="#fff"
+                    android:text="1000 BRUXELLES"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:drawablePadding="2dp"
+                    android:paddingStart="2dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_call"
+                    android:textSize="7dp"
+                    android:textColor="#fff"
+                    android:text="T : +32 (0)2 261 11 11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:drawablePadding="2dp"
+                    android:paddingStart="2dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="10dp"
+                    android:drawableLeft="@drawable/ic_mail"
+                    android:textSize="7dp"
+                    android:textColor="#fff"
+                    android:text="E-mail : rue.neuve@bnpparibasfortis.com"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:textStyle="bold"
+                    android:textSize="8dp"
+                    android:textColor="#fff"
+                    android:text="Opening times"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:textSize="8dp"
+                    android:textColor="#fff"
+                    android:text="Mon: 10am to 5pm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:textSize="8dp"
+                    android:textColor="#fff"
+                    android:text="Tue: 10am to 5pm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:textSize="8dp"
+                    android:textColor="#fff"
+                    android:text="Wed: 10am to 5pm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:textSize="8dp"
+                    android:textColor="#fff"
+                    android:text="Thu: 10am to 5pm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:layout_marginBottom="20dp"
+                    android:textSize="8dp"
+                    android:textColor="#fff"
+                    android:text="Fri: 10am to 5pm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <Button android:textSize="10dp"
+                    android:id="@+id/makeAppoint"
+                    android:padding="10dp"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/black"
+                    android:background="@drawable/rounded_white_bg"
+                    android:layout_width="match_parent"
+                    android:text="Make an Appointment"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+            <Button
+                    android:background="#4D000000"
+                    android:textColor="@android:color/white"
+                    android:textSize="8dp"
+                    android:text="Call"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:id="@+id/call" android:layout_weight="1"/>
+
+            <Button
+                    android:background="#4D000000"
+                    android:textColor="@android:color/white"
+                    android:layout_marginLeft="1dp"
+                    android:textSize="8dp"
+                    android:text="Navigate(500m)"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:id="@+id/navigate" android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+
+
+
+    <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/container_left_atm"
+            android:background="@drawable/rounded_bg"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="20dp">
+        <LinearLayout android:orientation="vertical"
+                      android:padding="20dp"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent">
+            <TextView
+                    android:id="@+id/close_atm"
+                    android:layout_gravity="end"
+                    android:textSize="14dp"
+                    android:textColor="#fff"
+                    android:text="X"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:textStyle="bold"
+                    android:textSize="12dp"
+                    android:textColor="#fff"
+                    android:text="Rue Neuve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:textSize="10dp"
+                    android:textColor="#fff"
+                    android:text="Rue Neuve 136"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:textSize="10dp"
+                    android:textColor="#fff"
+                    android:text="1000 BRUXELLES"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:drawablePadding="2dp"
+                    android:paddingStart="2dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="7dp"
+                    android:textColor="#fff"
+                    android:text="ATM (24/24)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:drawablePadding="2dp"
+                    android:paddingStart="2dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="7dp"
+                    android:textColor="#fff"
+                    android:text="ATM with speech support"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+            <Button
+                    android:background="#4D000000"
+                    android:textColor="@android:color/white"
+                    android:layout_marginLeft="1dp"
+                    android:textSize="8dp"
+                    android:text="Navigate(500m)"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:id="@+id/navigate_atm" android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

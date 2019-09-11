@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android"
+           xmlns:tools="http://schemas.android.com/tools">
+    <shortcut
+            android:enabled="true"
+            android:icon="@drawable/augmented_reality"
+            android:shortcutDisabledMessage="@string/short_shortcut"
+            android:shortcutId="Augmented Reality"
+            android:shortcutLongLabel="@string/short_shortcut"
+            android:shortcutShortLabel="@string/short_shortcut"
+            tools:targetApi="n_mr1">
+
+        <intent
+                android:action="android.intent.action.VIEW"
+                android:targetClass="com.ar.bankar.ads.activity.AdsArActivity"
+                android:targetPackage="com.ar.businesscard" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <shortcut
+            android:enabled="true"
+            android:icon="@drawable/augmented_reality"
+            android:shortcutDisabledMessage="@string/short_shortcut"
+            android:shortcutId="ATM Locator"
+            android:shortcutLongLabel="@string/short_shortcut"
+            android:shortcutShortLabel="@string/short_shortcut"
+            tools:targetApi="n_mr1">
+
+        <intent
+                android:action="android.intent.action.VIEW"
+                android:targetClass="com.ar.bankar.atm.view.AugmentedRealityLocationActivity"
+                android:targetPackage="com.ar.businesscard" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+</shortcuts>

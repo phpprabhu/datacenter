@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/basecontainer"
+        tools:context=".activity.ARActivity">
+
+    <FrameLayout
+            android:id="@+id/ar_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    <FrameLayout
+            android:layout_gravity="center"
+            android:background="@color/transparent_thirty"
+            android:visibility="visible"
+            android:id="@+id/layoutProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+        <ProgressBar
+                android:theme="@style/AppTheme"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView android:layout_width="wrap_content"
+                  android:textColor="@color/green"
+                  android:textStyle="bold"
+                  android:layout_gravity="center"
+                  android:text="Detecting card ..."
+                  android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </FrameLayout>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:padding="15dp"
+              android:orientation="vertical"
+              android:gravity="center"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/card"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            app:lottie_rawRes="@raw/card"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
+            android:background="@color/transparent">
+    </com.airbnb.lottie.LottieAnimationView>
+
+    <com.airbnb.lottie.LottieAnimationView
+            android:visibility="gone"
+            android:id="@+id/fetching"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            app:lottie_rawRes="@raw/fetching"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
+            android:background="@color/transparent">
+    </com.airbnb.lottie.LottieAnimationView>
+    <TextView
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:textSize="14dp"
+            android:id="@+id/text"
+            android:layout_above="@+id/buttons"
+            android:text="Please verify your card using Scan card (or) NFC before using Augmented Reality feature"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <View android:layout_width="match_parent" android:layout_height="1px" android:background="@color/black"></View>
+    <LinearLayout
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:id="@+id/buttons"
+            android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                 android:orientation="horizontal">
+    <Button
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_list"
+            android:text="Scan card"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/scan_card"/>
+    <Button
+            android:textColor="@color/white"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/rounded_list"
+            android:text="NFC"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/nfc" />
+    </LinearLayout>
+</LinearLayout>
