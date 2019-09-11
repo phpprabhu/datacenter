@@ -1,1 +1,1 @@
-include ':app', ':bankar'
+include ':app', ':server'

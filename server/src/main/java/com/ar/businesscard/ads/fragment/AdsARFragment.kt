@@ -66,7 +66,7 @@ class AdsARFragment: ArFragment(){
         val config = super.getSessionConfiguration(session)
         config.focusMode = Config.FocusMode.AUTO
 
-        config.augmentedImageDatabase = AugmentedImageDatabase.deserialize(session, context!!.resources.assets.open("ar.imgdb"))
+        config.augmentedImageDatabase = AugmentedImageDatabase.deserialize(session, context!!.resources.assets.open("output.imgdb"))
 
         return config
     }

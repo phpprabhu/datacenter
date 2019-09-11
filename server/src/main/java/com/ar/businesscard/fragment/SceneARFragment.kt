@@ -61,7 +61,7 @@ class SceneARFragment: ArFragment(){
         val config = super.getSessionConfiguration(session)
         config.focusMode = Config.FocusMode.AUTO
 
-        config.augmentedImageDatabase = AugmentedImageDatabase.deserialize(session, context!!.resources.assets.open("ar.imgdb"))
+        config.augmentedImageDatabase = AugmentedImageDatabase.deserialize(session, context!!.resources.assets.open("output.imgdb"))
 
         return config
     }
@@ -70,8 +70,7 @@ class SceneARFragment: ArFragment(){
         Logger.d("create : ${image.name}(${image.index}), pose: ${image.centerPose}, ex: ${image.extentX}, ez: ${image.extentZ}")
 
         when (image.name) {
-            "card.jpg","bnp_card.png" -> {
-
+            "qr.png" -> {
                 val node = CardAnchorNode(context!!, view, this, activity!!).init(image)
                 trackableMap[image.name] = node
                 arSceneView.scene.addChild(node)
