@@ -70,8 +70,22 @@ class SceneARFragment: ArFragment(){
         Logger.d("create : ${image.name}(${image.index}), pose: ${image.centerPose}, ex: ${image.extentX}, ez: ${image.extentZ}")
 
         when (image.name) {
-            "qr.png" -> {
+            "qr_code_146377.png" -> {
                 val node = CardAnchorNode(context!!, view, this, activity!!, 146377).init(image)
+                trackableMap[image.name] = node
+                arSceneView.scene.addChild(node)
+
+                Toast.makeText(context, "${image.name} added", Toast.LENGTH_LONG).show()
+            }
+            "qr_code_146378.png" -> {
+                val node = CardAnchorNode(context!!, view, this, activity!!, 146378).init(image)
+                trackableMap[image.name] = node
+                arSceneView.scene.addChild(node)
+
+                Toast.makeText(context, "${image.name} added", Toast.LENGTH_LONG).show()
+            }
+            "qr_code_146379.png" -> {
+                val node = CardAnchorNode(context!!, view, this, activity!!, 146379).init(image)
                 trackableMap[image.name] = node
                 arSceneView.scene.addChild(node)
 

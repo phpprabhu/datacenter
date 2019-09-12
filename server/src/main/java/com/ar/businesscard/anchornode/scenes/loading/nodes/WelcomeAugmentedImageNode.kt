@@ -1,23 +1,22 @@
 package com.ar.businesscard.anchornode.scenes.loading.nodes
 
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
+import android.support.v7.app.AlertDialog
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import com.ar.bankar.R
-import com.ar.businesscard.activity.data.ARData
+import com.ar.businesscard.data.Server
+import com.ar.businesscard.data.ServerList
 import com.ar.businesscard.utils.ar.ArResources
 import com.ar.businesscard.utils.ar.AugmentedImageNode
 import com.google.ar.sceneform.HitTestResult
-import java.io.IOException
-import com.ar.businesscard.data.Server
-import com.ar.businesscard.data.ServerList
 import com.google.gson.Gson
-import android.content.DialogInterface
-import android.support.v7.app.AlertDialog
+import java.io.IOException
 
 
 class WelcomeAugmentedImageNode(
