@@ -14,9 +14,6 @@ import java.util.concurrent.CompletableFuture
 
 object ArResources {
 
-    lateinit var videoPlayer: MediaPlayer
-    lateinit var videoRenderable: CompletableFuture<ModelRenderable>
-    lateinit var manRenderable: CompletableFuture<ModelRenderable>
     lateinit var loaderRenderable: CompletableFuture<ViewRenderable>
     lateinit var linksRenderable: CompletableFuture<ViewRenderable>
     lateinit var contactusRenderable: CompletableFuture<ViewRenderable>
@@ -33,29 +30,12 @@ object ArResources {
         contactusRenderable = getContactUs(context)
 
         chartRenderable = getCharts(context)
-
-        videoRenderable = getVideo(context)
-
-        manRenderable = getMan(context)
-
        
         return CompletableFuture.allOf(
             loaderRenderable
         )
     }
 
-    private fun getVideo(context: Context): CompletableFuture<ModelRenderable> {
-        val texture = ExternalTexture()
-        videoPlayer = MediaPlayer.create(context, R.raw.video_b)
-        videoPlayer.setSurface(texture.surface)
-        videoPlayer.isLooping = true
-        return ModelRenderable.builder()
-            .setSource(context, com.google.ar.sceneform.rendering.R.raw.sceneform_view_renderable).build().also {
-                it.thenAccept { renderable ->
-                    renderable.material.setExternalTexture("viewTexture", texture)
-                }
-            }
-    }
 
     private fun getLinks(context: Context): CompletableFuture<ViewRenderable> {
         return ViewRenderable.builder().setView(context, R.layout.view_links)
@@ -79,14 +59,6 @@ object ArResources {
         return ViewRenderable.builder().setView(context, R.layout.view_loading)
             .setVerticalAlignment(ViewRenderable.VerticalAlignment.CENTER)
             .build()
-    }
-
-    private fun getMan(context: Context): CompletableFuture<ModelRenderable> {
-        return ModelRenderable.builder()
-            .setSource(context, Uri.parse("man_coat_wave.sfb"))
-            .build()
-            .thenApply<ModelRenderable> { renderable -> this.setRenderable(renderable) }
-            .exceptionally { throwable -> this.onException() }
     }
 
     private fun onException(): ModelRenderable? {

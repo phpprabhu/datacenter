@@ -3,16 +3,13 @@ package com.ar.businesscard.anchornode.scenes.loading.nodes
 import android.content.Context
 import android.view.View
 import android.widget.RelativeLayout
-import android.widget.Toast
 import com.airbnb.lottie.LottieAnimationView
 import com.ar.bankar.R
-import com.ar.businesscard.anchornode.scenes.loading.nodes.VideoAugmentedImageNode.Companion.VIDEO_PAUSED
 import com.ar.businesscard.utils.Animation
 import com.ar.businesscard.utils.ar.ArResources
 import com.ar.businesscard.utils.ar.AugmentedImageNode
 import com.ar.businesscard.utils.ottobus.Events
 import com.ar.businesscard.utils.ottobus.GlobalBus
-import com.squareup.otto.Subscribe
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -61,14 +58,6 @@ class LoaderImageNode(val context: Context,val callback: LoaderImageNodeCallback
 
     override fun initLayout() {
         super.initLayout()
-    }
-
-    @Subscribe
-    fun getMessage(message: Events.Message) {
-        if(message.message.equals(VIDEO_PAUSED)) {
-            Animation.show(play, 2000)
-            Toast.makeText(context, message.message, Toast.LENGTH_SHORT).show()
-        }
     }
 
     interface LoaderImageNodeCallback{

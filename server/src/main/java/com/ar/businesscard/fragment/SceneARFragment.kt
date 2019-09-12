@@ -95,6 +95,7 @@ class SceneARFragment: ArFragment(){
                         Logger.d("update node: ${image.name}(${image.index}), pose: ${image.centerPose}, ex: ${image.extentX}, ez: ${image.extentZ}")
                     }
                     GlobalBus.getBus().post(Events.Message(AR_TRACKING))
+
                 } else {
                     createArNode(image)
                 }

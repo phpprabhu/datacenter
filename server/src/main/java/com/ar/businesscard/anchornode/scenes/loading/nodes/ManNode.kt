@@ -36,7 +36,6 @@ class ManNode(val context: Context, val arFragment: ArFragment, val callback: Ma
 
         node = TransformableNode(arFragment.transformationSystem)
         node.localRotation = Quaternion.axisAngle(Vector3(-0f, -360f, 0f), 270f)
-        node.renderable = ArResources.manRenderable.getNow(null)
 
         // Set the min and max scales of the ScaleController.
         // Default min is 0.75, default max is 1.75.
@@ -48,7 +47,6 @@ class ManNode(val context: Context, val arFragment: ArFragment, val callback: Ma
 
         node.setParent(anchorNode)
 
-        startTalking(ArResources.manRenderable.getNow(null))
     }
 
 

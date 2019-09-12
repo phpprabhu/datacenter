@@ -1,0 +1,43 @@
+{
+  "servers": [
+    {
+      "ID": 146377,
+      "Brand": "DELL",
+      "Model": "Dell R730XD",
+      "Serial": "C94HSG2",
+      "Processor": "2x Intel Xeon E5-2620v4",
+      "RAM": "64 GB",
+      "Disks": "4x2TB SATA",
+      "Public IP": "81.17.56.90/26",
+      "Private Network": "Available",
+      "Remote Management": "10.52.0.105/26",
+      "Hardware RAID": "Available"
+    },
+    {
+      "ID": 146378,
+      "Brand": "DELL",
+      "Model": "Dell R730XD",
+      "Serial": "C94HSG2",
+      "Processor": "2x Intel Xeon E5-2620v4",
+      "RAM": "16 GB",
+      "Disks": "4x2TB SATA",
+      "Public IP": "81.17.56.90/26",
+      "Private Network": "Available",
+      "Remote Management": "10.52.0.105/26",
+      "Hardware RAID": "Available"
+    },
+    {
+      "ID": 146379,
+      "Brand": "DELL",
+      "Model": "Dell R730XD",
+      "Serial": "C94HSG2",
+      "Processor": "2x Intel Xeon E5-2620v4",
+      "RAM": "32 GB",
+      "Disks": "4x2TB SATA",
+      "Public IP": "81.17.56.90/26",
+      "Private Network": "Available",
+      "Remote Management": "10.52.0.105/26",
+      "Hardware RAID": "Available"
+    }
+  ]
+}
