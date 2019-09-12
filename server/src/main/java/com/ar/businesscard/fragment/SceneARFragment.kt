@@ -70,31 +70,12 @@ class SceneARFragment: ArFragment(){
         Logger.d("create : ${image.name}(${image.index}), pose: ${image.centerPose}, ex: ${image.extentX}, ez: ${image.extentZ}")
 
         when (image.name) {
-            "qr_code_146377.png" -> {
+            "qr_code_146377.png","qr_code_146378.png","qr_code_146379.png" -> {
                 val node = CardAnchorNode(context!!, view, this, activity!!, 146377).init(image)
                 trackableMap[image.name] = node
                 arSceneView.scene.addChild(node)
 
                 Toast.makeText(context, "${image.name} added", Toast.LENGTH_LONG).show()
-            }
-            "qr_code_146378.png" -> {
-                val node = CardAnchorNode(context!!, view, this, activity!!, 146378).init(image)
-                trackableMap[image.name] = node
-                arSceneView.scene.addChild(node)
-
-                Toast.makeText(context, "${image.name} added", Toast.LENGTH_LONG).show()
-            }
-            "qr_code_146379.png" -> {
-                val node = CardAnchorNode(context!!, view, this, activity!!, 146379).init(image)
-                trackableMap[image.name] = node
-                arSceneView.scene.addChild(node)
-
-                Toast.makeText(context, "${image.name} added", Toast.LENGTH_LONG).show()
-            }
-            else -> {
-                trackableMap.remove(image.name).let {
-                    arSceneView.scene.removeChild(it)
-                }
             }
         }
 
@@ -112,23 +93,31 @@ class SceneARFragment: ArFragment(){
             when (image.trackingState) {
                 TrackingState.TRACKING -> if (trackableMap.contains(image.name)) {
                     if (trackableMap[image.name]?.update(image) == true) {
-                        Logger.d("update node: ${image.name}(${image.index}), pose: ${image.centerPose}, ex: ${image.extentX}, ez: ${image.extentZ}")
+                        Logger.d("update node TRACKING: ${image.name}(${image.index}), pose: ${image.centerPose}, ex: ${image.extentX}, ez: ${image.extentZ}")
                     }
                     GlobalBus.getBus().post(Events.Message(AR_TRACKING))
 
                 } else {
+                    Logger.d("update node TRACKING else : ${image.name}(${image.index}), pose: ${image.centerPose}, ex: ${image.extentX}, ez: ${image.extentZ}")
                     createArNode(image)
                 }
                 TrackingState.STOPPED -> {
-                    Logger.d("remove node: ${image.name}(${image.index})")
                     Toast.makeText(context, "${image.name} removed", Toast.LENGTH_LONG).show()
 
                     trackableMap.remove(image.name).let {
                         arSceneView.scene.removeChild(it)
                     }
                     GlobalBus.getBus().post(Events.Message(AR_STOPED))
+                    Logger.d("update node STOPPED : ${image.name}(${image.index}), pose: ${image.centerPose}, ex: ${image.extentX}, ez: ${image.extentZ}")
+
+                }
+                TrackingState.PAUSED -> {
+                    Logger.d("update node PAUSED : ${image.name}(${image.index}), pose: ${image.centerPose}, ex: ${image.extentX}, ez: ${image.extentZ}")
+
                 }
                 else -> {
+                    Logger.d("update node Else : ${image.name}(${image.index}), pose: ${image.centerPose}, ex: ${image.extentX}, ez: ${image.extentZ}")
+
                 }
             }
         }
