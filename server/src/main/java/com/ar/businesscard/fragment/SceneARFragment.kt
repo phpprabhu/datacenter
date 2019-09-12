@@ -91,7 +91,13 @@ class SceneARFragment: ArFragment(){
 
                 Toast.makeText(context, "${image.name} added", Toast.LENGTH_LONG).show()
             }
+            else -> {
+                trackableMap.remove(image.name).let {
+                    arSceneView.scene.removeChild(it)
+                }
+            }
         }
+
     }
 
     private fun onUpdateFrame(@Suppress("UNUSED_PARAMETER") frameTime: FrameTime?) {

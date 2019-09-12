@@ -52,14 +52,6 @@ class CardAnchorNode(
         changeScene(1)
     }
 
-    fun forwardScene() {
-        changeScene((currentSceneIndex + 1) % sceneList.size)
-    }
-
-    fun backwardScene() {
-        changeScene((currentSceneIndex - 1 + sceneList.size) % sceneList.size)
-    }
-
     private fun changeScene(index: Int) {
         currentSceneIndex = index
 
