@@ -2,7 +2,7 @@
   "servers": [
     {
       "ID": 146377,
-      "Brand": "DELL",
+      "Brand": "DELL 1",
       "Model": "Dell R730XD",
       "Serial": "C94HSG2",
       "Processor": "2x Intel Xeon E5-2620v4",
@@ -15,7 +15,7 @@
     },
     {
       "ID": 146378,
-      "Brand": "DELL",
+      "Brand": "DELL 2",
       "Model": "Dell R730XD",
       "Serial": "C94HSG2",
       "Processor": "2x Intel Xeon E5-2620v4",
@@ -28,7 +28,7 @@
     },
     {
       "ID": 146379,
-      "Brand": "DELL",
+      "Brand": "DELL 3",
       "Model": "Dell R730XD",
       "Serial": "C94HSG2",
       "Processor": "2x Intel Xeon E5-2620v4",
