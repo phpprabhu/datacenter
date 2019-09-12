@@ -172,13 +172,19 @@ class ChartAugmentedImageNode(private val context: Context) : AugmentedImageNode
 
         val set1: BarDataSet
 
+
         if (barChart.data != null && barChart.data.dataSetCount > 0) {
-            set1 = barChart.getData().getDataSetByIndex(0) as BarDataSet
+            set1 = barChart.data.getDataSetByIndex(0) as BarDataSet
             set1.values = yVals1
-            barChart.getData().notifyDataChanged()
+            set1.color = Color.rgb(65, 168, 121)
+            set1.setColors(context.getColor(R.color.white))
+            set1.valueTextColor = Color.rgb(65, 168, 121)
+            barChart.data.notifyDataChanged()
             barChart.notifyDataSetChanged()
         } else {
             set1 = BarDataSet(yVals1, "Statistics: ")
+            set1.color = Color.rgb(65, 168, 121)
+            set1.valueTextColor = Color.rgb(65, 168, 121)
             set1.setDrawIcons(false)
             set1.stackLabels = arrayOf("Up Time", "Down time", "Down time")
             set1.setColors(context.getColor(R.color.white))
@@ -191,8 +197,11 @@ class ChartAugmentedImageNode(private val context: Context) : AugmentedImageNode
             val data = BarData(dataSets)
             data.setValueTextColor(Color.WHITE)
 
-            barChart.setData(data)
+            barChart.data = data
         }
+        barChart.axisLeft.setDrawAxisLine(false)
+        barChart.axisRight.setDrawGridLines(false);
+        barChart.xAxis.setDrawGridLines(false);
         barChart.axisLeft.axisMinimum = 0f
         barChart.setDrawGridBackground(false)
         barChart.description.isEnabled = false
