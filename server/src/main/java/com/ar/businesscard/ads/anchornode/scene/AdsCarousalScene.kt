@@ -13,7 +13,7 @@ class AdsCarousalScene(val context: Context, val view: View?, val  arFragment: A
     override fun talkCompleted() {
         AccountHistoryAugmentedImageNode(context).init(anchorNode, this)
         ChartAugmentedImageNode(context).init(anchorNode, this)
-        WelcomeAugmentedImageNode(context).init(anchorNode, this)
+        WelcomeAugmentedImageNode(context, 1000).init(anchorNode, this)
     }
 
     override fun loadingCompleted() {

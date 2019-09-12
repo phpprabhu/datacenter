@@ -1,42 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="5dp"
                 android:background="@color/transparent_thirty"
                 android:id="@+id/contact_container"
-                android:gravity="center"
                 android:layout_width="150dp"
-                android:layout_height="166dp">
+                android:layout_height="230dp">
   <TextView android:layout_width="wrap_content"
             android:textStyle="bold"
-            android:id="@+id/welcome"
+            android:id="@+id/brand"
             android:textColor="@color/black"
             android:layout_height="wrap_content"
             android:textSize="10dp"
-            android:text="Welcome, Ananth KS"/>
+            android:text="Brand"/>
 
   <TextView android:layout_width="wrap_content"
+      android:textStyle="bold"
             android:layout_marginTop="10dp"
             android:textSize="8dp"
-            android:layout_below="@+id/welcome"
-            android:id="@+id/balanceTitle"
+            android:id="@+id/model"
             android:textColor="@color/black"
             android:layout_height="wrap_content"
-            android:text="Balance"/>
+            android:text="Model"/>
+
   <TextView android:layout_width="wrap_content"
             android:textSize="12dp"
             android:textStyle="bold"
-            android:layout_below="@+id/balanceTitle"
-            android:id="@+id/balance"
+            android:id="@+id/serial"
             android:textColor="@color/black"
             android:layout_height="wrap_content"
-            android:text="1000,33 EUR"/>
+            android:text="Serial"/>
+
+  <TextView android:layout_width="wrap_content"
+      android:textSize="12dp"
+      android:textStyle="bold"
+      android:id="@+id/processor"
+      android:textColor="@color/black"
+      android:layout_height="wrap_content"
+      android:text="Processor"/>
+
+  <TextView android:layout_width="wrap_content"
+      android:textSize="12dp"
+      android:textStyle="bold"
+      android:id="@+id/ram"
+      android:textColor="@color/black"
+      android:layout_height="wrap_content"
+      android:text="RAM"/>
+
+  <TextView android:layout_width="wrap_content"
+      android:textSize="12dp"
+      android:textStyle="bold"
+      android:id="@+id/disks"
+      android:textColor="@color/black"
+      android:layout_height="wrap_content"
+      android:text="Disks"/>
+
+  <TextView android:layout_width="wrap_content"
+      android:textSize="12dp"
+      android:textStyle="bold"
+      android:id="@+id/ip"
+      android:textColor="@color/black"
+      android:layout_height="wrap_content"
+      android:text="Public IP"/>
+
+  <TextView android:layout_width="wrap_content"
+      android:textSize="12dp"
+      android:textStyle="bold"
+      android:id="@+id/private_network"
+      android:textColor="@color/black"
+      android:layout_height="wrap_content"
+      android:text="Private Network"/>
+
+  <TextView android:layout_width="wrap_content"
+      android:textSize="12dp"
+      android:textStyle="bold"
+      android:id="@+id/rm"
+      android:textColor="@color/black"
+      android:layout_height="wrap_content"
+      android:text="Remote Management"/>
+
+  <TextView android:layout_width="wrap_content"
+      android:textSize="12dp"
+      android:textStyle="bold"
+      android:id="@+id/raid"
+      android:textColor="@color/black"
+      android:layout_height="wrap_content"
+      android:text="Hardware RAID"/>
+
   <Button  android:layout_below="@+id/balance"
            android:layout_marginTop="10dp"
            android:textSize="8dp"
            android:background="@color/green"
            android:textColor="@color/white"
-          android:id="@+id/contact"
+          android:id="@+id/pc"
           android:layout_width="75dp"
           android:layout_height="20dp"
-  android:text="Contact us"/>
+  android:text="Power Cycle"/>
 
-</RelativeLayout>
+  <Button  android:layout_below="@+id/balance"
+      android:layout_marginTop="10dp"
+      android:textSize="8dp"
+      android:background="@color/green"
+      android:textColor="@color/white"
+      android:id="@+id/scan"
+      android:layout_width="75dp"
+      android:layout_height="20dp"
+      android:text="Schedule Hardware Scan"/>
+
+</LinearLayout>

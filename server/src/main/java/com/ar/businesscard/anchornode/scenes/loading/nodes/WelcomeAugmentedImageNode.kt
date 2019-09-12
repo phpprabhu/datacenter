@@ -12,9 +12,18 @@ import com.ar.businesscard.activity.data.ARData
 import com.ar.businesscard.utils.ar.ArResources
 import com.ar.businesscard.utils.ar.AugmentedImageNode
 import com.google.ar.sceneform.HitTestResult
+import java.io.IOException
+import com.ar.businesscard.data.Server
+import com.ar.businesscard.data.ServerList
+import com.google.gson.Gson
+import android.content.DialogInterface
+import android.support.v7.app.AlertDialog
 
 
-class WelcomeAugmentedImageNode(private val context: Context) : AugmentedImageNode(ArResources.contactusRenderable), View.OnClickListener {
+class WelcomeAugmentedImageNode(
+    private val context: Context,
+    val serverID: Int
+) : AugmentedImageNode(ArResources.contactusRenderable), View.OnClickListener {
 
     override fun initLayout() {
         super.initLayout()
@@ -29,12 +38,43 @@ class WelcomeAugmentedImageNode(private val context: Context) : AugmentedImageNo
 
         localRotation = ArResources.viewRenderableRotation
 
-        val contactUs = getButton(R.id.contact)
-        val welcom = getTexview(R.id.welcome)
+       val serverList = parseFromAssset()
+        val server = getSelectedServer(serverID, serverList.servers)
 
-        welcom.text = "Welcome, ${ARData.getFName()}"
-        contactUs.setOnClickListener(this)
+        val pc = getButton(R.id.pc)
+        val scan = getButton(R.id.scan)
 
+        val brand = getTexview(R.id.brand)
+        val model = getTexview(R.id.model)
+        val serial = getTexview(R.id.serial)
+        val processor = getTexview(R.id.processor)
+        val ram = getTexview(R.id.ram)
+        val disks = getTexview(R.id.disks)
+        val ip = getTexview(R.id.ip)
+        val private_network = getTexview(R.id.private_network)
+        val rm = getTexview(R.id.rm)
+        val raid = getTexview(R.id.raid)
+
+        brand.text = "Brand : ${server.brand}"
+        model.text = "Model : ${server.model}"
+        serial.text = "Serial : ${server.serial}"
+        processor.text = "Processor : ${server.processor}"
+        ram.text = "RAM : ${server.ram}"
+        disks.text = "Disks : ${server.disks}"
+        ip.text = "Public IP : ${server.publicIP}"
+        private_network.text = "PrivateN etwork : ${server.privateNetwork}"
+        rm.text = "Remote Management : ${server.remoteManagement}"
+        raid.text = "Hardware RAID : ${server.hardwareRAID}"
+
+
+        pc.setOnClickListener(this)
+        scan.setOnClickListener(this)
+
+    }
+
+    private fun getSelectedServer(serverId: Int, servers: List<Server>): Server {
+        val server: Server? = servers.find { it.id == serverId }
+        return server!!
     }
 
     private fun getButton(btnId: Int) = ArResources.contactusRenderable.get().view.findViewById<Button>(btnId)
@@ -46,8 +86,10 @@ class WelcomeAugmentedImageNode(private val context: Context) : AugmentedImageNo
     }
 
     override fun onClick(v: View) {
-        if(v.id == R.id.contact){
-            callFromDailer(context, "+32465325167")
+        if(v.id == com.ar.bankar.R.id.pc){
+            showDialog("Remote Management")
+        }else if(v.id == com.ar.bankar.R.id.scan){
+            showDialog("Scan")
         }
     }
 
@@ -59,6 +101,48 @@ class WelcomeAugmentedImageNode(private val context: Context) : AugmentedImageNo
         } catch (e: Exception) {
             e.printStackTrace()
         }
+    }
+
+    fun  parseFromAssset(): ServerList {
+        val gson = Gson()
+        val servers = gson.fromJson(loadData("servers.json"), ServerList::class.java)
+        return servers
+    }
+
+    fun loadData(inFile: String): String {
+        var tContents = ""
+
+        try {
+            val stream = context.getAssets().open(inFile)
+
+            val size = stream.available()
+            val buffer = ByteArray(size)
+            stream.read(buffer)
+            stream.close()
+            tContents = String(buffer)
+        } catch (e: IOException) {
+            // Handle exceptions here
+        }
+
+        return tContents
+
+    }
+
+    fun showDialog(msg: String){
+        val dialogClickListener = DialogInterface.OnClickListener { dialog, which ->
+            when (which) {
+                DialogInterface.BUTTON_POSITIVE -> {
+                }
+
+                DialogInterface.BUTTON_NEGATIVE -> {
+                }
+            }//Yes button clicked
+            //No button clicked
+        }
+
+        val builder = AlertDialog.Builder(context)
+        builder.setMessage(msg).setPositiveButton("Yes", dialogClickListener)
+            .setNegativeButton("No", dialogClickListener).show()
     }
 }
 

@@ -71,7 +71,7 @@ class SceneARFragment: ArFragment(){
 
         when (image.name) {
             "qr.png" -> {
-                val node = CardAnchorNode(context!!, view, this, activity!!).init(image)
+                val node = CardAnchorNode(context!!, view, this, activity!!, 146377).init(image)
                 trackableMap[image.name] = node
                 arSceneView.scene.addChild(node)
 

@@ -8,7 +8,13 @@ import com.ar.businesscard.anchornode.scenes.loading.nodes.*
 import com.ar.businesscard.utils.ar.AugmentedImageNodeGroup
 import com.google.ar.sceneform.ux.ArFragment
 
-class LoadingScene(val context: Context, val view: View?,val  arFragment: ArFragment, val activity: FragmentActivity) : AugmentedImageNodeGroup(),
+class LoadingScene(
+    val context: Context,
+    val view: View?,
+    val arFragment: ArFragment,
+    val activity: FragmentActivity,
+    val serverID: Int
+) : AugmentedImageNodeGroup(),
     LoaderImageNode.LoaderImageNodeCallback, ManNode.ManSpeakCallback {
     override fun talkCompleted() {
 
@@ -20,9 +26,9 @@ class LoadingScene(val context: Context, val view: View?,val  arFragment: ArFrag
     }
 
     override fun onInit() {
-        AccountHistoryAugmentedImageNode(context).init(anchorNode, this)
+        //AccountHistoryAugmentedImageNode(context).init(anchorNode, this)
         ChartAugmentedImageNode(context).init(anchorNode, this)
-        WelcomeAugmentedImageNode(context).init(anchorNode, this)
+        WelcomeAugmentedImageNode(context, serverID).init(anchorNode, this)
     }
 }
 

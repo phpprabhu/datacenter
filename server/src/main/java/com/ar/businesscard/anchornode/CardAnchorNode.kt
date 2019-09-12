@@ -14,7 +14,13 @@ import com.google.ar.sceneform.ux.ArFragment
 import kotlinx.coroutines.delay
 
 
-class CardAnchorNode(val context: Context, val view: View?, val arFragment: ArFragment, val activity: FragmentActivity) : AugmentedImageAnchorNode() {
+class CardAnchorNode(
+    val context: Context,
+    val view: View?,
+    val arFragment: ArFragment,
+    val activity: FragmentActivity,
+    val serverID: Int
+) : AugmentedImageAnchorNode() {
 
     override val imageWidth: Float = 1F // 100 cm
     override val imageHeight: Float = 0.6667f // 66.7 cm
@@ -25,7 +31,7 @@ class CardAnchorNode(val context: Context, val view: View?, val arFragment: ArFr
     override fun onInit() {
         GlobalBus.getBus().post(Events.Message(ARActivity.AR_DETECTED))
 
-        sceneList.add(LoadingScene(context, view, arFragment, activity).init(this))
+        sceneList.add(LoadingScene(context, view, arFragment, activity, serverID).init(this))
         //sceneList.add(VideoScene(context).init(this))
         //sceneList.add(SwarmScene2().init(this))
         //sceneList.add(SwarmScene3().init(this))
