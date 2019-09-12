@@ -8,6 +8,15 @@
                 android:layout_height="170dp">
   <TextView android:layout_width="wrap_content"
             android:textStyle="bold"
+            android:id="@+id/serverid"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:textSize="8dp"
+            android:text="server id"
+  />
+
+  <TextView android:layout_width="wrap_content"
+            android:textStyle="bold"
             android:id="@+id/brand"
             android:textColor="@color/white"
             android:layout_height="wrap_content"
