@@ -2,24 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:padding="5dp"
-                android:background="@color/transparent_thirty"
+                android:background="@color/blue"
                 android:id="@+id/contact_container"
                 android:layout_width="150dp"
                 android:layout_height="250dp">
   <TextView android:layout_width="wrap_content"
             android:textStyle="bold"
             android:id="@+id/brand"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:textSize="8dp"
-            android:text="Brand"/>
+            android:text="Brand"
+  />
 
   <TextView android:layout_width="wrap_content"
       android:textStyle="bold"
             android:layout_marginTop="8dp"
             android:textSize="8dp"
             android:id="@+id/model"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:text="Model"/>
 
@@ -27,7 +28,7 @@
             android:textSize="8dp"
             android:textStyle="bold"
             android:id="@+id/serial"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:text="Serial"/>
 
@@ -35,7 +36,7 @@
       android:textSize="8dp"
       android:textStyle="bold"
       android:id="@+id/processor"
-      android:textColor="@color/black"
+      android:textColor="@color/white"
       android:layout_height="wrap_content"
       android:text="Processor"/>
 
@@ -43,7 +44,7 @@
       android:textSize="8dp"
       android:textStyle="bold"
       android:id="@+id/ram"
-      android:textColor="@color/black"
+      android:textColor="@color/white"
       android:layout_height="wrap_content"
       android:text="RAM"/>
 
@@ -51,7 +52,7 @@
       android:textSize="8dp"
       android:textStyle="bold"
       android:id="@+id/disks"
-      android:textColor="@color/black"
+      android:textColor="@color/white"
       android:layout_height="wrap_content"
       android:text="Disks"/>
 
@@ -59,7 +60,7 @@
       android:textSize="8dp"
       android:textStyle="bold"
       android:id="@+id/ip"
-      android:textColor="@color/black"
+      android:textColor="@color/white"
       android:layout_height="wrap_content"
       android:text="Public IP"/>
 
@@ -67,7 +68,7 @@
       android:textSize="8dp"
       android:textStyle="bold"
       android:id="@+id/private_network"
-      android:textColor="@color/black"
+      android:textColor="@color/white"
       android:layout_height="wrap_content"
       android:text="Private Network"/>
 
@@ -75,7 +76,7 @@
       android:textSize="8dp"
       android:textStyle="bold"
       android:id="@+id/rm"
-      android:textColor="@color/black"
+      android:textColor="@color/white"
       android:layout_height="wrap_content"
       android:text="Remote Management"/>
 
@@ -83,28 +84,36 @@
       android:textSize="8dp"
       android:textStyle="bold"
       android:id="@+id/raid"
-      android:textColor="@color/black"
+      android:textColor="@color/white"
       android:layout_height="wrap_content"
       android:text="Hardware RAID"/>
 
-  <Button  android:layout_below="@+id/balance"
-           android:layout_marginTop="8dp"
-           android:textSize="8dp"
-           android:background="@color/green"
-           android:textColor="@color/white"
-          android:id="@+id/pc"
-          android:layout_width="75dp"
-          android:layout_height="20dp"
-  android:text="Power Cycle"/>
 
-  <Button  android:layout_below="@+id/balance"
-      android:layout_marginTop="8dp"
-      android:textSize="8dp"
-      android:background="@color/green"
-      android:textColor="@color/white"
-      android:id="@+id/scan"
-      android:layout_width="75dp"
-      android:layout_height="20dp"
-      android:text="Schedule Hardware Scan"/>
+
+  <LinearLayout
+          android:orientation="horizontal"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+    <Button  android:layout_below="@+id/balance"
+             android:layout_marginTop="8dp"
+             android:textSize="6dp"
+             android:background="@color/white"
+             android:textColor="@color/blue"
+             android:id="@+id/pc"
+             android:layout_width="50dp"
+             android:layout_height="30dp"
+             android:text="Power Cycle"/>
+    <Button  android:layout_below="@+id/balance"
+             android:layout_marginStart="10dp"
+             android:layout_marginTop="8dp"
+             android:textSize="6dp"
+             android:background="@color/white"
+             android:textColor="@color/blue"
+             android:id="@+id/scan"
+             android:layout_width="70dp"
+             android:layout_height="30dp"
+             android:text="Schedule Hardware Scan"/>
+  </LinearLayout>
+
 
 </LinearLayout>
