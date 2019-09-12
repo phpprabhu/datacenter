@@ -23,6 +23,8 @@ import com.google.ar.sceneform.HitTestResult
 import java.util.*
 
 
+
+
 class ChartAugmentedImageNode(private val context: Context) : AugmentedImageNode(ArResources.chartRenderable) {
 
     private lateinit var barChart: BarChart
@@ -44,7 +46,8 @@ class ChartAugmentedImageNode(private val context: Context) : AugmentedImageNode
         localRotation = ArResources.viewRenderableRotation
 
         barChart = getChart(R.id.chart)
-        setChart(3)
+       // setChart(3)
+        stackedBar(5)
     }
 
     private fun getChart(btnId: Int) = ArResources.chartRenderable.get().view.findViewById<BarChart>(btnId)
@@ -147,6 +150,56 @@ class ChartAugmentedImageNode(private val context: Context) : AugmentedImageNode
             barChart.groupBars(0f, groupSpace, barSpace) // perform the "explicit" grouping
             barChart.invalidate()
         }
+    }
+
+    private fun stackedBar(size: Int){
+        val yVals1 = ArrayList<BarEntry>()
+
+        for (i in 0 until size + 1) {
+            val mult = size + 1
+            val val1 = (Math.random() * mult).toFloat() + mult / 3
+            val val2 = (Math.random() * mult).toFloat() + mult / 3
+            (Math.random() * mult).toFloat() + mult / 3
+
+            yVals1.add(
+                BarEntry(
+                    i.toFloat(),
+                    floatArrayOf(val1, val2),
+                    context.resources.getDrawable(R.drawable.linkedin)
+                )
+            )
+        }
+
+        val set1: BarDataSet
+
+        if (barChart.data != null && barChart.data.dataSetCount > 0) {
+            set1 = barChart.getData().getDataSetByIndex(0) as BarDataSet
+            set1.values = yVals1
+            barChart.getData().notifyDataChanged()
+            barChart.notifyDataSetChanged()
+        } else {
+            set1 = BarDataSet(yVals1, "Statistics: ")
+            set1.setDrawIcons(false)
+            set1.stackLabels = arrayOf("Up Time", "Down time", "Down time")
+            set1.setColors(context.getColor(R.color.white))
+            set1.valueTextColor = context.getColor(R.color.white)
+
+
+            val dataSets = ArrayList<IBarDataSet>()
+            dataSets.add(set1)
+
+            val data = BarData(dataSets)
+            data.setValueTextColor(Color.WHITE)
+
+            barChart.setData(data)
+        }
+        barChart.axisLeft.axisMinimum = 0f
+        barChart.setDrawGridBackground(false)
+        barChart.description.isEnabled = false
+        barChart.axisRight.axisMinimum = 0f
+
+        barChart.setFitBars(true)
+        barChart.invalidate()
     }
 
     private fun getExpenseEntries(): List<BarEntry> {
