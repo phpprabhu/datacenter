@@ -43,7 +43,7 @@ class WelcomeAugmentedImageNode(
         val pc = getButton(R.id.pc)
         val scan = getButton(R.id.scan)
 
-        val id = getTexview(R.id.serverid)
+        val serverId = getTexview(R.id.serverid)
         val brand = getTexview(R.id.brand)
         val model = getTexview(R.id.model)
         val serial = getTexview(R.id.serial)
@@ -56,7 +56,7 @@ class WelcomeAugmentedImageNode(
         val raid = getTexview(R.id.raid)
 
         brand.text = "Brand : ${server.brand}"
-        brand.text = "Server ID : ${server.id}"
+        serverId.text = "Server ID : ${server.id}"
         model.text = "Model : ${server.model}"
         serial.text = "Serial : ${server.serial}"
         processor.text = "Processor : ${server.processor}"
