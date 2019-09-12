@@ -30,7 +30,6 @@
 
         <activity
                 android:name=".activity.ARActivity"
-                android:configChanges="orientation|screenSize"
                 android:launchMode="singleTask"
                 android:screenOrientation="landscape">
             <intent-filter>

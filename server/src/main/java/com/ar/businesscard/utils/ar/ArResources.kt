@@ -61,12 +61,4 @@ object ArResources {
             .build()
     }
 
-    private fun onException(): ModelRenderable? {
-        return null
-    }
-
-    private fun setRenderable(modelRenderable: ModelRenderable): ModelRenderable {
-        return modelRenderable
-    }
-
 }
