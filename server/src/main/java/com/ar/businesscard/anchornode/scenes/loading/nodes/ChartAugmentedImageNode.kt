@@ -65,12 +65,12 @@ class ChartAugmentedImageNode(private val context: Context) : AugmentedImageNode
 
         set1 = BarDataSet(incomeEntries, "Income")
         set1.color = Color.rgb(65, 168, 121)
-        set1.valueTextColor = context.getColor(R.color.black)
+        set1.valueTextColor = context.getColor(R.color.white)
         set1.valueTextSize = 10f
 
         set2 = BarDataSet(expenseEntries, "Expense")
         set2.setColors(Color.rgb(241, 107, 72))
-        set2.valueTextColor = context.getColor(R.color.black)
+        set2.valueTextColor = context.getColor(R.color.white)
         set2.valueTextSize = 10f
 
         dataSets.add(set1)
@@ -108,7 +108,7 @@ class ChartAugmentedImageNode(private val context: Context) : AugmentedImageNode
         xAxis.mLabelWidth = 20
 
         barChart.xAxis.valueFormatter = IndexAxisValueFormatter(xAxisValues)
-        barChart.xAxis.textColor = context.getColor(R.color.black)
+        barChart.xAxis.textColor = context.getColor(R.color.white)
 
 
         val leftAxis = barChart.axisLeft
