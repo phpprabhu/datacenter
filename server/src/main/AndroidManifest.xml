@@ -27,11 +27,6 @@
 
         <meta-data android:name="com.google.ar.core" android:value="required"/>
 
-        <activity android:name=".activity.AuthenticationActivity" android:exported="true">
-
-
-            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts" />
-        </activity>
 
         <activity
                 android:name=".activity.ARActivity"
@@ -44,18 +39,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:parentActivityName=".activity.AuthenticationActivity" android:name=".scan.ScanActivity">
-            <meta-data
-                    android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".activity.AuthenticationActivity"/>
-        </activity>
-
-        <activity android:name="com.ar.bankar.ads.activity.AdsArActivity"  android:parentActivityName=".activity.AuthenticationActivity">
-        </activity>
-
-        <activity android:name="com.ar.bankar.atm.view.AugmentedRealityLocationActivity" android:screenOrientation="landscape"/>
-
 
     </application>
 

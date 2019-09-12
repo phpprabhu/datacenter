@@ -29,7 +29,7 @@
                   android:textColor="@color/green"
                   android:textStyle="bold"
                   android:layout_gravity="center"
-                  android:text="Detecting card ..."
+                  android:text="scanning for barcode ..."
                   android:layout_height="wrap_content"/>
         </LinearLayout>
     </FrameLayout>
