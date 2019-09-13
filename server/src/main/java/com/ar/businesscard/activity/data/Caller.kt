@@ -42,7 +42,7 @@ class Caller {
                     Log.d("aggregate", aggregate.size.toString())
 
                     fillARAccountData("2000",aggregate, accountHistoryResponse.value.movements)
-                    fillARUserData("Ananth KS")
+                    fillARUserData("Prabhu KS")
                 }
             }
         }

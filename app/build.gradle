@@ -25,7 +25,7 @@ android {
     }
 
     signingConfigs {
-        ananth {
+        prabhu {
             keyAlias 'android'
             keyPassword 'android12345'
             storeFile file('/Users/anand/Documents/AR/Business-card/keystore_new')
@@ -47,7 +47,7 @@ android {
             shrinkResources false // This must be first
             minifyEnabled false   // This must be after shrinkResources
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.ananth
+            signingConfig signingConfigs.prabhu
         }
         debug{
         }
